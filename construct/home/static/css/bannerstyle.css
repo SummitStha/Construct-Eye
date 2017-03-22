@@ -1,0 +1,313 @@
+/*--
+Author: W3layouts
+Author URL: http://w3layouts.com
+License: Creative Commons Attribution 3.0 Unported
+License URL: http://creativecommons.org/licenses/by/3.0/
+--*/
+html, body{
+    font-size: 100%;
+	font-family: 'Open Sans', sans-serif;
+	background:#ffffff;
+}
+p{
+	margin:0;
+	font-size:14px;
+}
+h1,h2,h3,h4,h5,h6{
+	font-family: 'Volkhov', serif;
+	margin:0;
+}
+ul,label{
+	margin:0;
+	padding:0;
+}
+body a:hover{
+	text-decoration:none;
+}
+/*-- banner --*/
+input[type="submit"],.tab-grid-left .nav-tabs li a,.agileits_services_grid h4,.faq li a,.footer ul.footer-nav li a,.copy-right p a,.mail-foot a{
+	transition: .5s ease-in;
+	-webkit-transition: .5s ease-in;
+	-moz-transition: .5s ease-in;
+	-o-transition: .5s ease-in;
+	-ms-transition: .5s ease-in;
+}
+.banner{
+	background:url(../images/banner.jpg) no-repeat 0px 0px;
+	background-size:cover;
+	-webkit-background-size:cover;
+	-moz-background-size:cover;
+	-o-background-size:cover;
+	-ms-background-size:cover;
+}
+.banner,.banner-Info{
+	min-height:700px;
+}
+.banner-Info{
+	background: url(../images/dott.png)repeat 0px 0px;
+    background-size: 4px;
+    -webkit-background-size: 4px;
+    -moz-background-size: 4px;
+    -o-background-size: 4px;
+    -ms-background-size: 4px;
+}
+.w3l_banner_info{
+	text-align:center;
+	padding:14em 0 0;
+}
+.w3l_banner_info p{
+	color:#fff;
+	text-transform:uppercase;
+	position:relative;
+	padding-bottom:4em;
+}
+.w3l_banner_info p:before{
+	content: '';
+    position: absolute;
+    bottom: 0%;
+    width: 20%;
+    height: 1px;
+    background: #fff;
+    left: 40%;
+}
+.w3l_banner_info p:after{
+	content: '';
+    position: absolute;
+    bottom: -40%;
+    right:47%;
+    background: url(../images/img-sp.png) no-repeat 0px 0px;
+    display: block;
+    width: 64px;
+    height: 64px;
+}
+/*Wrapper*/
+.wrapper{
+    position: relative;
+}
+.wrapper h2 {
+    font-size: 3em;
+    color: #fff;
+    margin:1.5em 0 .5em;
+	text-transform:capitalize;
+}
+.wrapper .sentence {
+    font-size: 2em;
+    color: #fff;
+	text-transform:capitalize;
+	font-family: 'Volkhov', serif;
+}
+
+/*Pop Effect*/
+.popEffect{
+	display: inline;
+	text-indent: 8px;
+}
+.popEffect span{
+	animation: pop 10.5s linear infinite 0s;
+	-ms-animation: pop 10.5s linear infinite 0s;
+	-webkit-animation: pop 10.5s linear infinite 0s;
+	color:#36DD7F;
+	opacity: 0;
+	overflow: hidden;
+	position: absolute;
+}
+.popEffect span:nth-child(2){
+	animation-delay: 2.5s;
+	-ms-animation-delay: 2.5s;
+	-webkit-animation-delay: 2.5s;
+}
+.popEffect span:nth-child(3){
+	animation-delay: 5s;
+	-ms-animation-delay: 5s;
+	-webkit-animation-delay: 5s;
+}
+.popEffect span:nth-child(4){
+	animation-delay: 7.5s;
+	-ms-animation-delay: 7.5s;
+	-webkit-animation-delay: 7.5s;
+}
+.popEffect span:nth-child(5){
+	animation-delay: 10s;
+	-ms-animation-delay: 10s;
+	-webkit-animation-delay: 10s;
+}
+
+/*Pop Effect Animation*/
+@-moz-keyframes pop{
+	0% { opacity: 0; }
+	5% { opacity: 0; -moz-transform: rotate(0deg) scale(0.10) skew(0deg) translate(0px); }
+	10% { opacity: 1; -moz-transform: translateY(0px); }
+	25% { opacity: 1; -moz-transform: translateY(0px); }
+	30% { opacity: 0; -moz-transform: translateY(0px); }
+	80% { opacity: 0; }
+	100% { opacity: 0;}
+}
+@-webkit-keyframes pop{
+	0% { opacity: 0; }
+	5% { opacity: 0; -webkit-transform: rotate(0deg) scale(0.10) skew(0deg) translate(0px);}
+	10% { opacity: 1; -webkit-transform: translateY(0px); }
+	25% { opacity: 1; -webkit-transform: translateY(0px); }
+	30% { opacity: 0; -webkit-transform: translateY(0px); }
+	80% { opacity: 0; }
+	100% { opacity: 0; }
+}
+@-ms-keyframes pop{
+	0% { opacity: 0; }
+	5% { opacity: 0; -ms-transform: rotate(0deg) scale(0.10) skew(0deg) translate(0px); }
+	10% { opacity: 1; -ms-transform: translateY(0px); }
+	25% { opacity: 1; -ms-transform: translateY(0px); }
+	30% { opacity: 0; -ms-transform: translateY(0px); }
+	80% { opacity: 0; }
+	100% { opacity: 0; }
+}
+/*-- //banner --*/
+
+@media (max-width:1366px){
+	.banner, .banner-Info {
+		min-height: 590px;
+	}
+	.w3l_banner_info {
+		padding: 9em 0 0;
+	}
+	
+}
+@media (max-width: 1080px){
+	.banner, .banner-Info {
+		min-height: 510px;
+	}
+	.wrapper h2 {
+		font-size: 2.7em;
+	}
+}
+
+@media (max-width:991px){
+	.banner, .banner-Info {
+		min-height: 480px;
+	}
+	.banner{
+		background-position: -75px 0px;
+	}
+}
+
+@media (max-width:768px){
+	.banner, .banner-Info {
+		min-height: 450px;
+
+	.wrapper h2 {
+		font-size: 2.2em;
+	}
+	.wrapper .sentence {
+		font-size: 1.7em;
+	}
+
+	p.eum {
+		margin: 2em auto 0;
+	}
+}
+
+@media (max-width:667px){
+	.w3l_banner_info {
+		padding: 5em 0 0;
+	}
+	.wrapper h2 {
+		font-size: 2em;
+	}
+	.wrapper .sentence {
+		font-size: 1.5em;
+	}
+	.banner, .banner-Info {
+		min-height: 370px;
+	}
+@media (max-width:568px){
+	.w3l_banner_info {
+		padding: 3em 0 0;
+	}
+	.w3l_banner_info p:before {
+		width: 45%;
+		left: 28%;
+	}
+	.wrapper h2 {
+		font-size: 1.8em;
+	}
+	.wrapper .sentence {
+		font-size: 1.3em;
+	}
+	.banner, .banner-Info {
+		min-height: 300px;
+	}
+}
+@media (max-width:480px){
+	.wrapper h2 {
+		font-size: 1.6em;
+	}
+	.wrapper .sentence {
+		font-size: 1.1em;
+	}
+	.banner, .banner-Info {
+		min-height: 260px;
+	}
+	.w3l_banner_info p:after {
+		bottom:-29%;
+		right:45%;
+		background: url(../images/img-sp.png) no-repeat 0px 0px;
+		background-size: 785%;
+		width: 40px;
+		height: 37px;
+	}
+	.w3l_banner_info p {
+		padding-bottom: 3em;
+		font-size: 13px;
+	}
+}
+@media (max-width: 414px){
+	.wrapper h2 {
+		font-size: 1.4em;
+	}
+	.wrapper .sentence {
+		font-size: .91em;
+	}
+	.banner, .banner-Info {
+		min-height: 235px;
+	}
+}
+@media (max-width:384px){
+	.w3l_banner_info p {
+		font-size: 12px;
+	}
+	.wrapper h2 {
+		font-size: 1.3em;
+	}
+	.wrapper .sentence {
+		font-size: .85em;
+	}
+}
+@media (max-width:375px){
+	.wrapper h2 {
+		font-size: 1.2em;
+	}
+	.wrapper .sentence {
+		font-size: .8em;
+	}
+	.banner, .banner-Info {
+		min-height: 220px;
+	}
+	p.eum {
+		width: 100%;
+		padding: 0 0 0 2.5em;
+	}
+}
+@media (max-width:320px){
+	.wrapper h2 {
+		font-size: 1.06em;
+	}
+	.wrapper .sentence {
+		font-size: 1em;
+		text-align: left;
+	}
+	.w3l_banner_info {
+		padding: 2.5em 0 0;
+	}
+	.banner, .banner-Info {
+		min-height: 195px;
+	}
+}

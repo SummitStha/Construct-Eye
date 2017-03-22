@@ -1,0 +1,205 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  {% include 'head.html' %}
+
+          <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+ 
+        <!--[if lt IE 9]>
+                <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+        <![endif]-->
+    </head>
+    <body>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+ <script src="{% static 'jquery.csv.min.js' %}"></script>
+ <script type="text/javascript" src="http://www.google.com/jsapi"></script>
+
+<script type="text/javascript"> // load the visualisation API
+  google.load('visualization', '1', { packages: ['corechart', 'controls'] });
+</script>
+    
+
+        <!-- Header -->
+        {% include 'header.html' %}
+        <!-- Header end -->
+<br><br>
+
+
+<div id="myCarousel" class="carousel slide" data-ride="carousel">
+{% include 'rate.html' %}
+
+  <h1 class="text-center">Project : {{object.name}} </h1><br>
+    <!-- Indicators -->
+    <ol class="carousel-indicators">
+      <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+      <li data-target="#myCarousel" data-slide-to="1"></li>
+    </ol>
+
+    <!-- Wrapper for slides -->
+    <div class="carousel-inner" role="listbox">
+      <div class="item active">
+        <img src="{{ object.media.url }}" alt="Image">
+        <div class="carousel-caption">
+          <h3>{{object.name}}</h3>        </div>      
+      </div>
+      </div>
+      </div>
+
+      <br><br> <br><br>
+
+<h2>Project Visualization</h2>
+<br class="clear"><br><br>
+<div class="container text-center">    
+  <div class="row">
+    <div class="col-sm-4">
+    <script type="text/javascript">
+function drawVisualization() {
+   $.get("{% static 'ifr.csv' %}", function(csvString) {
+      // transform the CSV string into a 2-dimensional array
+      var arrayData = $.csv.toArrays(csvString, {onParseValue: $.csv.hooks.castToScalar});
+
+      // this new DataTable object holds all the data
+      var data = new google.visualization.arrayToDataTable(arrayData);
+      // CAPACITY - En-route ATFM delay - YY - CHART
+      var crt_ertdlyYY = new google.visualization.ChartWrapper({
+         chartType: 'LineChart',
+         containerId: 'crt_ertdlyYY',
+         dataTable: data,
+         options:{
+            width: 1000, height: 200,
+            title: 'Annual Project Progress (year to completion)',
+            titleTextStyle : {color: 'grey', fontSize: 11},
+         }
+      });
+      crt_ertdlyYY.draw();
+   });
+}
+google.setOnLoadCallback(drawVisualization)
+</script>
+
+<div id="crt_ertdlyYY"></div>
+
+
+      <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script type="text/javascript">
+      google.charts.load("current", {packages:["corechart"]});
+      google.charts.setOnLoadCallback(drawChart);
+      function drawChart() {
+        var data = google.visualization.arrayToDataTable([
+          ['Task', 'Hours per Day'],
+          ['Completion',     81],
+          ['Remaining',    19]
+        ]);
+
+        var options = {
+          title: 'Project Status',
+          is3D: true,
+        };
+
+        var chart = new google.visualization.PieChart(document.getElementById('piechart_3d'));
+        chart.draw(data, options);
+      }
+    </script>
+    <div id="piechart_3d" style="width: 900px; height: 500px;"></div>
+    </div><br class="clear"><br class="clear">
+
+
+    <div class="col-sm-5"> 
+     
+         <p></p>
+    </div> 
+    <div class="col-sm-4">
+      <div class="">
+       <p></p>
+    
+
+      </div>
+      <div class="">
+       <p></p>
+      </div>
+    </div>
+  </div>
+</div><br> 
+
+
+<div>
+{% include 'reports.html' %}
+</div>
+<br><br><br>
+
+
+<div class="container">
+<br/><br/>
+<center>
+<div style="float:left; margin:-10px 0 0 0;   width:600px;">  <h2>Project Details</h2>
+  <table class="table table-hover">
+    <thead>
+      <tr>
+        <th>Project Title</th>
+        <td>{{object.name}}</td>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <th>Location</th>
+        <td>{{object.location}}</td>
+       
+      </tr>
+      <tr>
+        <th>Tender Person</th>
+        <td>{{object.tender_contract}}</td>
+        <td></td>
+      </tr>
+      <tr>
+        <th>Start Date</th>
+        <td>{{object.start_date}}</td>
+      
+      </tr>
+       <tr>
+        <th>End Date</th>
+        <td>{{object.completion_date}}</td>
+      
+      </tr>
+       <tr>
+        <th>Budget</th>
+        <td>{{object.budget}}</td>
+       
+      </tr>
+       <tr>
+        <th>Status</th>
+        <td>{{object.status}}</td>
+       
+      </tr>
+       <tr>
+       
+    </tbody>
+  </table>
+
+
+ <br>
+  <a href="{% url 'report-form' %}"><button class="btn btn-danger" type='submit' value='Report this project'>Report this Projects</button></a>
+
+  </div>
+  <br><br>
+  
+<div style="margin:-50px 0 0 0;">
+  <h2>Description of the Project:</h2>
+  <br><br>
+  <p style="padding:0 20px; text-align:justify;">{{object.description}}</p>
+</div>
+
+
+</div>
+
+ <!-- Footer bottom -->
+            {% include 'footer_bottom.html' %}<!-- Footer bottom end -->
+        </footer><!-- Footer end -->
+
+
+        
+</body>
+</html>

@@ -1,0 +1,106 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  {% include 'head.html' %}
+
+          <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+ 
+        <!--[if lt IE 9]>
+                <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+        <![endif]-->
+    </head>
+    <body>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+ <script src="{% static 'jquery.csv.min.js' %}"></script>
+ <script type="text/javascript" src="http://www.google.com/jsapi"></script>
+
+
+    
+
+        <!-- Header -->
+        {% include 'header.html' %}
+        <!-- Header end -->
+<br><br>
+
+
+  <h1 class="text-center">Reported Project : {{object.project_name}} </h1><br>
+   
+
+<div class="container"><br/><br/>
+  <h2>Complaints</h2>
+  <p>{{ object.complaint }}</p>  
+</div>
+
+
+<section id="portfolio">
+            <div class="container portfolio_area text-center">
+                <h2>Projects</h2>
+                <p><h3>Here are the various projects that are currently in progress</h3></p>
+
+                <div id="filters">
+                    <button class="button is-checked" data-filter="*">Show All</button>
+                    <button class="button" data-filter=".buildings">Arniko Colony</button>
+                    <button class="button" data-filter=".interior">Kalanki Sky Bridge</button>
+                    <button class="button" data-filter=".isolation">Bagmati Bridge</button>
+                    <button class="button" data-filter=".plumbing">View Tower</button>
+                </div>
+                <!-- Portfolio grid -->		
+                <div class="grid">
+                    <div class="grid-sizer"></div>
+                    <div class="grid-item grid-item--width2 grid-item--height2 buildings plumbing interior">
+                        <img alt="" src="{% static 'images/arniko1.jpg' %}" >
+                        <div class="portfolio_hover_area">
+                            <a class="fancybox" href="{% static 'images/arniko1.jpg' %}" data-fancybox-group="gallery" title="Lorem ipsum dolor sit amet"><span class="fa fa-search"></span></a>
+                            <a href="#"><span class="fa fa-link"></span></a>
+                        </div>  
+                    </div>
+
+                    <div class="grid-item buildings interior isolation">
+                        <img alt="" src="{% static 'images/arniko2.jpg' %}" >
+                        <div class="portfolio_hover_area">
+                            <a class="fancybox" href="{% static 'images/arniko2.jpg' %}" data-fancybox-group="gallery" title="Lorem ipsum dolor sit amet"><span class="fa fa-search"></span></a>
+                            <a href="#"><span class="fa fa-link"></span></a>
+                        </div>   
+                    </div>
+
+                    <div class="grid-item interior plumbing isolation">
+                        <img alt="" src="{% static 'images/arniko3.jpg' %}" >
+                        <div class="portfolio_hover_area">
+                            <a class="fancybox" href="{% static 'images/arniko3.jpg' %}" data-fancybox-group="gallery" title="Lorem ipsum dolor sit amet"><span class="fa fa-search"></span></a>
+                            <a href="#"><span class="fa fa-link"></span></a>
+                        </div>  
+                    </div>
+
+                    <div class="grid-item isolation buildings">
+                        <img alt="" src="{% static 'images/tower1.jpg' %}" >
+                        <div class="portfolio_hover_area">
+                            <a class="fancybox" href="{% static 'images/tower1.jpg' %}" data-fancybox-group="gallery" title="Lorem ipsum dolor sit amet"><span class="fa fa-search"></span></a>
+                            <a href="#"><span class="fa fa-link"></span></a>
+                        </div>  
+                    </div>
+
+                    <div class="grid-item plumbing isolation">
+                        <img alt="" src="{% static 'images/portfolio4.jpg' %}" >
+                        <div class="portfolio_hover_area">
+                            <a class="fancybox" href="{% static 'images/portfolio4.jpg' %}" data-fancybox-group="gallery" title="Lorem ipsum dolor sit amet"><span class="fa fa-search"></span></a>
+                            <a href="#"><span class="fa fa-link"></span></a>
+                        </div>  
+                    </div>
+                </div><!-- Portfolio grid end -->
+            </div>
+        </section>
+
+
+ <!-- Footer bottom -->
+            {% include 'footer_bottom.html' %}<!-- Footer bottom end -->
+        </footer><!-- Footer end -->
+
+
+        
+</body>
+</html>
+

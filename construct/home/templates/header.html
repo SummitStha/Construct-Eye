@@ -1,0 +1,102 @@
+{% load staticfiles %}
+<header>
+<link href="{% static 'login/login-register.css' %}" rel="stylesheet" />
+
+<script src="{% static 'js/register/signup_login.js' %}"></script>
+            <!-- Top Navbar -->
+            <div class="top_nav">
+                <div class="container">
+                <div id="test">
+                    <ul class="list-inline info">
+                        <li><a href="#"><span class="fa fa-phone"></span> +977-9841764239</a></li>
+                        <li><a href="#"><span class="fa fa-envelope"></span> support@Constructeye.com</a></li>
+                        <li><a href="#"><span class="fa fa-clock-o"></span> Mon - Sat 9:00 - 19:00</a></li>
+                    </ul>
+                    <ul class="list-inline social_icon">
+                        <li><a href=""><span class="fa fa-facebook"></span></a></li>
+                        <li><a href=""><span class="fa fa-twitter"></span></a></li>
+                        <li><a href=""><span class="fa fa-behance"></span></a></li>
+                        <li><a href=""><span class="fa fa-dribbble"></span></a></li>
+                        <li><a href=""><span class="fa fa-linkedin"></span></a></li>
+                        <li><a href=""><span class="fa fa-youtube"></span></a></li>
+
+{% if user.is_authenticated %}  
+                     
+ <li>
+    <a class="js-user-logout" href="#" data-url="{% url 'user-logout' %}"><i class="fa fa-sign-out" aria-hidden="true"></i> Logout</a>
+ </li>
+ <li>
+<a data-toggle="modal" href="#"> <i class="fa fa-user" aria-hidden="true"></i> {{ user.username|upper }}</a>
+</li>
+  {% else %}
+  <li>
+    <a class="js-user-signup" href="#" data-url="{% url 'user-signup' %}"><i class="fa fa-user-plus" aria-hidden="true"></i>Signup</a>
+    </li>
+    <li>
+    <a class="js-user-login " href="#" data-url="{% url 'login' %}"><i class="fa fa-sign-in" aria-hidden="true"></i>Login</a>
+    </li>
+
+{% endif %}
+                    </ul>           
+                </div>
+                </div>
+            </div><!-- Top Navbar end -->
+
+            <!-- Navbar -->
+            <nav class="navbar bootsnav">
+                <!-- Top Search -->
+                <div class="top-search">
+                    <div class="container">
+                        <div class="input-group">
+                            <span class="input-group-addon"><i class="fa fa-search"></i></span>
+                            <input type="text" class="form-control" placeholder="Search">
+                            <span class="input-group-addon close-search"><i class="fa fa-times"></i></span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="container">
+                    <!-- Atribute Navigation -->
+                    <div class="attr-nav">
+                        <ul>
+                            <li class="search"><a href="#"><i class="fa fa-search"></i></a></li>
+                        </ul>
+                    </div>
+                    <!-- Header Navigation -->
+                    <div class="navbar-header">
+                        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-menu">
+                            <i class="fa fa-bars"></i>
+                        </button>
+                        <a href="#"><h1> CONSTRUCT EYE</h1></a>
+                    </div>
+                    <!-- Navigation -->
+                    <div class="collapse navbar-collapse" id="navbar-menu">
+                        <ul class="nav navbar-nav menu">
+                            <li><a href="{% url 'home' %}">Home</a></li>                    
+                            <li><a href="{% url 'report-form' %}">Reporting</a></li>
+                            <li><a href="{% url 'document_list' %}">Documents</a></li>
+                            <li><a href="{% url 'project_list' %}">Ongoing Projects</a></li>
+                            <li><a href="{% url 'upcoming_project_list' %}">Upcoming Projects</a></li>
+                            <li><a href="{% url 'reported_project_list' %}">Reported Projects</a></li>
+                            <li><a href="#about">Contact Us</a></li>
+                        </ul>
+                    </div>
+                </div>   
+            </nav><!-- Navbar end -->
+        </header>
+
+        <!-- model start-->
+    <div class="modal fade login" id="modal-event">
+    <div class="modal-dialog login animated">
+      <div class="modal-content">
+
+
+      </div>
+    </div>
+  </div>
+
+<div class="clearfix"> </div> 
+
+<script src="{% static 'js/jquery-3.1.1.min.js' %}"></script>
+    <script src="{% static 'js/bootstrap.min.js' %}"></script>
+     <script src="{% static 'home/js/login_signup.js' %}"></script>

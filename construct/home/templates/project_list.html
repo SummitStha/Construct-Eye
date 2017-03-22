@@ -1,0 +1,7 @@
+{% for project in object_list %}
+<h1><a href="{% url 'detail-project' project.pk %}"><li>{{ project.name}}  </strong></li></a>
+	 
+	
+	</h1></br>
+
+{% endfor %}

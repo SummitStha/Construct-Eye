@@ -1,0 +1,452 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+ {% include 'head.html' %}
+
+          <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+
+<style>
+
+.clear {
+    clear: both;
+}
+
+body {
+  font-family: Verdana, sans-serif;
+  margin: 0;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.row > .column {
+  padding: 0 8px;
+}
+
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.column {
+  float: left;
+  width: 25%;
+}
+
+/* The Modal (background) */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  padding-top: 100px;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: black;
+}
+
+/* Modal Content */
+.modal-content {
+  position: relative;
+  background-color: #fefefe;
+  margin: auto;
+  padding: 0;
+  width: 90%;
+  max-width: 1200px;
+}
+
+/* The Close Button */
+.close {
+  color: white;
+  position: absolute;
+  top: 10px;
+  right: 25px;
+  font-size: 35px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: #999;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.mySlides {
+  display: none;
+}
+
+.cursor {
+  cursor: pointer
+}
+
+/* Next & previous buttons */
+.prev,
+.next {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  width: auto;
+  padding: 16px;
+  margin-top: -50px;
+  color: white;
+  font-weight: bold;
+  font-size: 20px;
+  transition: 0.6s ease;
+  border-radius: 0 3px 3px 0;
+  user-select: none;
+  -webkit-user-select: none;
+}
+
+/* Position the "next button" to the right */
+.next {
+  right: 0;
+  border-radius: 3px 0 0 3px;
+}
+
+/* On hover, add a black background color with a little bit see-through */
+.prev:hover,
+.next:hover {
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+/* Number text (1/3 etc) */
+.numbertext {
+  color: #f2f2f2;
+  font-size: 12px;
+  padding: 8px 12px;
+  position: absolute;
+  top: 0;
+}
+
+img {
+  margin-bottom: -4px;
+}
+
+.caption-container {
+  text-align: center;
+  background-color: black;
+  padding: 2px 16px;
+  color: white;
+}
+
+.demo {
+  opacity: 0.6;
+}
+
+.active,
+.demo:hover {
+  opacity: 1;
+}
+
+img.hover-shadow {
+  transition: 0.3s
+}
+
+.hover-shadow:hover {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19)
+}
+
+.social .fa {
+  padding: 12px;
+  font-size: 20px;
+  border-radius: 100%;
+  width: 45px;
+  height:45px;
+  text-align: center;
+  text-decoration: none;
+  margin: 5px 2px;
+}
+
+.social .fa:hover {
+    opacity: 0.7;
+}
+
+.social .fa-facebook {
+  background: #3B5998;
+  color: white;
+}
+
+.social .fa-twitter {
+  background: #55ACEE;
+  color: white;
+}
+
+.social .fa-google {
+  background: #dd4b39;
+  color: white;
+}
+
+.social .fa-linkedin {
+  background: #007bb5;
+  color: white;
+}
+
+.social .fa-youtube {
+  background: #bb0000;
+  color: white;
+}
+
+.social .fa-instagram {
+  background: #125688;
+  color: white;
+}
+
+.social .fa-pinterest {
+  background: #cb2027;
+  color: white;
+}
+
+
+</style>
+
+<script>
+function openModal() {
+  document.getElementById('myModal').style.display = "block";
+}
+
+function closeModal() {
+  document.getElementById('myModal').style.display = "none";
+}
+
+var slideIndex = 1;
+showSlides(slideIndex);
+
+function plusSlides(n) {
+  showSlides(slideIndex += n);
+}
+
+function currentSlide(n) {
+  showSlides(slideIndex = n);
+}
+
+function showSlides(n) {
+  var i;
+  var slides = document.getElementsByClassName("mySlides");
+  var dots = document.getElementsByClassName("demo");
+  var captionText = document.getElementById("caption");
+  if (n > slides.length) {slideIndex = 1}
+  if (n < 1) {slideIndex = slides.length}
+  for (i = 0; i < slides.length; i++) {
+      slides[i].style.display = "none";
+  }
+  for (i = 0; i < dots.length; i++) {
+      dots[i].className = dots[i].className.replace(" active", "");
+  }
+  slides[slideIndex-1].style.display = "block";
+  dots[slideIndex-1].className += " active";
+  captionText.innerHTML = dots[slideIndex-1].alt;
+}
+</script>
+
+        <!--[if lt IE 9]>
+                <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+        <![endif]-->
+    </head>
+    <body>
+ <script src="{% static 'jquery.csv.min.js' %}"></script>
+ <script type="text/javascript" src="http://www.google.com/jsapi"></script>
+
+<script type="text/javascript"> // load the visualisation API
+  google.load('visualization', '1', { packages: ['corechart', 'controls'] });
+</script>
+    
+
+        <!-- Header -->
+        {% include 'header.html' %}
+        <!-- Header end -->
+<br><br>
+
+
+<div>
+{% if object.publish %}
+ <h2 class="text-center">Reported Project : {{object.project_name}} </h2><br>
+    <!-- Indicators -->
+      <div class="container"><br/><br/>
+ <div class="panel panel-primary">
+      <div class="panel-heading"><h3 class="text-center">Complain :  </h3></div>
+      <div class="panel-body">{{ object.complaint }}</div>
+    </div>
+</div>
+  <br><br>
+      
+
+      <br><br>
+
+<!-- start of proof media -->
+  <div class="container">
+<h1 style="text-align:center">Proof Medias :</h1>
+
+<div class="row">
+  <div class="column">
+    <img src="{{ object.image.url }}" style="width:100%" onclick="openModal();currentSlide(1)" class="hover-shadow cursor">
+  </div>
+  <div class="column">
+    <img src="{{ object.image.url }}" style="width:100%" onclick="openModal();currentSlide(2)" class="hover-shadow cursor">
+  </div>
+  <div class="column">
+    <img src="{{ object.image.url }}" style="width:100%" onclick="openModal();currentSlide(3)" class="hover-shadow cursor">
+  </div>
+  <div class="column">
+    <img src="{{ object.image.url }}" style="width:100%" onclick="openModal();currentSlide(4)" class="hover-shadow cursor">
+  </div>
+</div>
+
+<div id="myModal" class="modal">
+  <span class="close cursor" onclick="closeModal()">&times;</span>
+  <div class="modal-content">
+
+    <div class="mySlides">
+      <div class="numbertext">1 / 4</div>
+      <img src="{{ object.image.url }}" style="width:100%">
+    </div>
+
+    <div class="mySlides">
+      <div class="numbertext">2 / 4</div>
+      <img src="{{ object.image.url }}" style="width:100%">
+    </div>
+
+    <div class="mySlides">
+      <div class="numbertext">3 / 4</div>
+      <img src="{{ object.image.url }}" style="width:100%">
+    </div>
+    
+    <div class="mySlides">
+      <div class="numbertext">4 / 4</div>
+      <img src="{{ object.image.url }}" style="width:100%">
+    </div>
+    
+    <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+    <a class="next" onclick="plusSlides(1)">&#10095;</a>
+
+    <div class="caption-container">
+      <p id="caption"></p>
+    </div>
+
+
+    <div class="column">
+      <img class="demo cursor" src="{{ object.image.url }}" style="width:100%" onclick="currentSlide(1)" alt="Nature and sunrise">
+    </div>
+    <div class="column">
+      <img class="demo cursor" src="{{ object.image.url }}" style="width:100%" onclick="currentSlide(2)" alt="Trolltunga, Norway">
+    </div>
+    <div class="column">
+      <img class="demo cursor" src="{{ object.image.url }}" style="width:100%" onclick="currentSlide(3)" alt="Mountains and fjords">
+    </div>
+    <div class="column">
+      <img class="demo cursor" src="{{ object.image.url }}" style="width:100%" onclick="currentSlide(4)" alt="Northern Lights">
+    </div>
+  </div>
+</div>
+
+
+<br><br>
+
+
+<!-- start social buttons -->
+  <div class="container social">   
+
+<h2>Help Us Spread This News</h2>
+<br><br>
+
+
+<!-- start font awesome icons -->
+<a href="#" class="social fa fa-facebook"></a>
+<a href="#" class="social fa fa-twitter"></a>
+<a href="#" class="social fa fa-google"></a>
+<a href="#" class="social fa fa-linkedin"></a>
+<a href="#" class="social fa fa-youtube"></a>
+<a href="#" class="social fa fa-instagram"></a>
+<a href="#" class="social fa fa-pinterest"></a>
+<!-- end font awesome icons-->
+
+
+{% else %}
+
+ <div class="panel panel-primary">
+      <div class="panel-heading"><h2 class="text-center">This complaint is being processed. </h2></div>
+      </div>
+   
+{% endif %}
+</div>
+</div>
+</div> <!-- end of proof media -->
+<br> <br><br> <br>
+<!-- Footer -->
+        <footer>
+            <!-- Footer top -->
+            <div class="container footer_top">
+                <div class="row">
+                    <div class="col-lg-4 col-sm-7">
+                        <div class="footer_item">
+                            <h4>About Company</h4>
+                            <img class="logo" src="{% static 'images/logo.png' %}" alt="Construction" />
+                            <p>Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem</p>
+
+                            <ul class="list-inline footer_social_icon">
+                                <li><a href=""><span class="fa fa-facebook"></span></a></li>
+                                <li><a href=""><span class="fa fa-twitter"></span></a></li>
+                                <li><a href=""><span class="fa fa-youtube"></span></a></li>
+                                <li><a href=""><span class="fa fa-google-plus"></span></a></li>
+                                <li><a href=""><span class="fa fa-linkedin"></span></a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-lg-2 col-sm-5">
+                        <div class="footer_item">
+                            <h4>Explore link</h4>
+                            <ul class="list-unstyled footer_menu">
+                                <li><a href=""><span class="fa fa-play"></span> Our services</a>
+                                <li><a href=""><span class="fa fa-play"></span> Meet our team</a>
+                                <li><a href=""><span class="fa fa-play"></span> Forum</a>
+                                <li><a href=""><span class="fa fa-play"></span> Help center</a>
+                                <li><a href=""><span class="fa fa-play"></span> Contact Cekas</a>
+                                <li><a href=""><span class="fa fa-play"></span> Privacy Policy</a>
+                                <li><a href=""><span class="fa fa-play"></span> Cekas terms</a>
+                                <li><a href=""><span class="fa fa-play"></span> Site map</a>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-sm-7">
+                        <div class="footer_item">
+                            <h4>Latest post</h4>
+                            <ul class="list-unstyled post">
+                                <li><a href=""><span class="date">20 <small>AUG</small></span>  Luptatum omittantur duo ne mpetus indoctum</a></li>
+                                <li><a href=""><span class="date">20 <small>AUG</small></span>  Luptatum omittantur duo ne mpetus indoctum</a></li>
+                                <li><a href=""><span class="date">20 <small>AUG</small></span>  Luptatum omittantur duo ne mpetus indoctum</a></li>
+                                <li><a href=""><span class="date">20 <small>AUG</small></span>  Luptatum omittantur duo ne mpetus indoctum</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-sm-5">
+                        <div class="footer_item">
+                            <h4>Contact us</h4>
+                            <ul class="list-unstyled footer_contact">
+                                <li><a href=""><span class="fa fa-map-marker"></span> 124 New Line, London UK</a></li>
+                                <li><a href=""><span class="fa fa-envelope"></span> hello@psdfreebies.com</a></li>
+                                <li><a href=""><span class="fa fa-mobile"></span><p>+44 00 00 1234 <br />+44 00 00 1234</p></a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div><!-- Footer top end -->
+
+            <!-- Footer bottom -->
+            <div class="footer_bottom text-center">
+                <p class="wow fadeInRight">
+                  &copy; Open Data Hackthon 2017 
+                </p>
+            </div><!-- Footer bottom end -->
+        </footer><!-- Footer end --> 
+
+
+        
+</body>
+</html>

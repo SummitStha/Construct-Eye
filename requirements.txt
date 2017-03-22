@@ -1,0 +1,3 @@
+Pillow
+django-tables2
+django-widget-tweaks

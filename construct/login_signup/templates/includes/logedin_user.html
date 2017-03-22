@@ -1,0 +1,24 @@
+{% load staticfiles %}
+
+<script src="{% static 'js/register/signup_login.js' %}"></script>
+<ul class="list-inline info">
+                        <li><a href="#"><span class="fa fa-phone"></span> +977-9841764239</a></li>
+                        <li><a href="#"><span class="fa fa-envelope"></span> support@Constructeye.com</a></li>
+                        <li><a href="#"><span class="fa fa-clock-o"></span> Mon - Sat 9:00 - 19:00</a></li>
+                    </ul>
+                    <ul class="list-inline social_icon">
+                        <li><a href=""><span class="fa fa-facebook"></span></a></li>
+                        <li><a href=""><span class="fa fa-twitter"></span></a></li>
+                        <li><a href=""><span class="fa fa-behance"></span></a></li>
+                        <li><a href=""><span class="fa fa-dribbble"></span></a></li>
+                        <li><a href=""><span class="fa fa-linkedin"></span></a></li>
+                        <li><a href=""><span class="fa fa-youtube"></span></a></li>
+                    
+
+<li>
+<a class="js-user-logout" href="#"  data-url="{% url 'user-logout' %}"> <i class="fa fa-sign-out" aria-hidden="true"></i> Logout</a>
+ </li>
+<li>
+<a data-toggle="modal" href="#"> <i class="fa fa-user" aria-hidden="true"></i> {{ user.username|upper}}</a>
+</li>
+

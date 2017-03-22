@@ -1,0 +1,81 @@
+{% load staticfiles %}
+<!DOCTYPE HTML>
+<html>
+<head>
+  <title>Reports</title>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+  <script src="{% static 'chart/js/jquery.canvasjs.min.js' %}"></script>
+
+   <script type="text/javascript">
+    window.onload = function () {
+      var chart = new CanvasJS.Chart("chartContainer", {
+        title: {
+          text: "Annual Budget for Project (price in millions of Dollar*"
+        },
+        axisX: {
+          interval: 10
+        },
+        dataPointWidth: 60,
+        data: [{
+          type: "column",
+          indexLabelLineThickness: 2,
+          dataPoints: [
+              { x: 1, y: 401, indexLabel: "2008" },
+              { x: 2, y: 225, indexLabel: "2009" },
+              { x: 3, y: 557, indexLabel: "2010"  },
+              { x: 4, y: 85, indexLabel: "2011" },
+              { x: 5, y: 355, indexLabel: "2012" },
+              { x: 6, y: 400, indexLabel: "2013"  },
+              { x: 7, y: 310, indexLabel: "2014" },
+              { x: 8, y: 614, indexLabel: "2015"  },
+           
+           
+          ]
+        }]
+      });
+      chart.render();
+    }
+    </script>
+
+  <script type="text/javascript">
+    
+
+
+
+    $(function () {
+      //Better to construct options first and then pass it as a parameter
+      var options = {
+        title: {
+          text: "Progress"
+        },
+        animationEnabled: true,
+        legend: {
+          verticalAlign: "bottom",
+          horizontalAlign: "center"
+        },
+        data: [
+        {
+          type: "pie",
+          showInLegend: true,
+          toolTipContent: "{y} - <strong>#percent%</strong>",
+          dataPoints: [
+            { y: 11726, legendText: "COMPLETED", indexLabel: "COMPLETED" },
+            { y: 8529, legendText: "REMAINING", indexLabel: "REMAINING" },
+           
+        
+          ]
+        }
+        ]
+      };
+      $("#chartContainer4").CanvasJSChart(options);
+    });
+  </script>
+</head>
+<body>
+  <br />
+  <div id="chartContainer4" style="width: 45%; height: 400px;display: inline-block;"></div>
+  
+  <div id="chartContainer" style="width: 45%; height: 400px;display: inline-block;"></div>
+  
+</body>
+</html>

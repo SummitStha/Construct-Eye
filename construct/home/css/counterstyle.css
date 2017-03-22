@@ -1,0 +1,249 @@
+/*--
+Author: W3layouts
+Author URL: http://w3layouts.com
+License: Creative Commons Attribution 3.0 Unported
+License URL: http://creativecommons.org/licenses/by/3.0/
+--*/
+html, body{
+    font-size: 100%;
+	font-family: 'Open Sans', sans-serif;
+	background:#ffffff;
+}
+p{
+	margin:0;
+	font-size:14px;
+}
+h1,h2,h3,h4,h5,h6{
+	font-family: 'Volkhov', serif;
+	margin:0;
+}
+ul,label{
+	margin:0;
+	padding:0;
+}
+body a:hover{
+	text-decoration:none;
+}
+
+/*-- count-down --*/
+.count-down{
+	background:url(../images/56.jpg) no-repeat 0px 0px;
+	background-size:cover;
+	-webkit-background-size:cover;
+	-moz-background-size:cover;
+	-o-background-size:cover;
+	-ms-background-size:cover;
+	min-height:400px;
+	padding:3.5em 0;
+	opacity: 0.8;
+}
+.count-down h3{
+	text-align: center;
+    font-size: 1.5em;
+    color: #fff;
+    line-height: 1.8em;
+    margin: 0 auto 2em;
+    text-transform: capitalize;
+    width: 70%;
+	position:relative;
+	padding-left:2em;
+}
+.count-down h3:before{
+	position:absolute;
+	top:0%;
+	left:0%;
+	background:url(../images/img-sp.png) no-repeat -7px -197px;
+	display:block;
+	width:32px;
+	height:32px;
+	content:'';
+}
+.w3_updates_bottom_grid p{
+	font-size: 3em;
+    color:#fff;
+    margin: 0;
+    font-weight: 700;
+}
+.w3_updates_bottom_grid h4{
+	font-size:1.5em;
+	color:#fff;
+}
+.w3_updates_bottom_grid1{
+	padding: 1em 1em 2em;
+    text-align: center;
+    border: 4px double #fff;
+}
+/*-- //count-down --*/
+/*-----start-responsive-design------*/
+@media (max-width:1440px){
+	.wthree_about_right {
+		padding:1.9em 3em 1em;
+	}
+	.wthree_about_right p {
+		margin: 1em 0 2em;
+	}
+	.wthree_about_right_grid:nth-child(2) {
+		margin-bottom: 0em;
+	}
+	.span1_of_1 {
+		width: 32.2%;
+	}
+}
+@media (max-width:1280px){
+	.wthree_about_right_grid_right p{
+		margin: 1em 0 1em !important;
+	}
+	.wthree_about_right_grid_right h4 {
+		font-size: 1.1em;
+	}
+	.wthree_about_right_grid_right {
+		padding: 0;
+	}
+	.wthree_about_right {
+		padding: 1em 3em .89em;
+	}
+	.span1_of_1:nth-child(4) {
+		margin-left: 20em;
+	}
+}
+@media (max-width: 1080px){
+	.w3ls_nav_bottom_left {
+		margin: 0;
+	}
+	.wthree_about_right_grid {
+		padding: 0;
+	}
+	.wthree_about_left {
+		width:100%;
+		float:none;
+	}
+	.wthree_about_left img{
+		margin:0 auto;
+		width: 50%;
+	}
+	.wthree_about_right {
+		padding: 3em;
+		float: none;
+		width: 100%;
+	}
+	.wthree_about_right_grid:nth-child(2) {
+		margin-bottom: 2em;
+	}
+	.count-down h3 {
+		width: 90%;
+	}
+	.span1_of_1 {
+		width: 31.99%;
+	}
+	.span1_of_1:nth-child(4) {
+		margin-left: 17em;
+	}
+}
+@media (max-width:991px){
+	.wthree_about_right_grid {
+		padding:0 1em;
+		float: left;
+		width: 50%;
+	}
+	.wthree_about_right p i {
+		margin: .5em 0 0em;
+	}
+	.wthree_about_right p {
+		margin: 2em 0;
+	}
+	p.eum {
+		width: 90%;
+	}
+	.count-down h3 {
+		width: 100%;
+		font-size: 1.4em;
+	}
+	.w3_updates_bottom_grid {
+		float: left;
+		width: 25%;
+	}
+	.w3_updates_bottom_grid p {
+		font-size: 2.5em;
+	}
+	.w3_updates_bottom_grid1 {
+		padding: 1em .5em 2em;
+	}
+	.count-down {
+		min-height: 365px;
+	}
+	
+	.span1_of_1 {
+		width: 31.8%;
+	}
+	.span1_of_1:nth-child(4) {
+		margin-left: 15.5em;
+	}
+}
+@media (max-width:736px){
+	.demo > li img {
+		width: 209px;
+	}
+	.span1_of_1 {
+		width: 31.7%;
+	}
+}
+@media (max-width:667px){
+	.p-mask h4 {
+		font-size: 1.3em;
+	}
+	.span1_of_1 {
+		width: 31.6%;
+	}
+	.w3_updates_bottom_grid h4 {
+		font-size: .9em;
+	}
+	.w3_updates_bottom_grid1 {
+		padding: 1em .3em 2em;
+	}
+}
+@media (max-width:640px){
+	.tab-content {
+		padding: 2em 2em;
+	}
+	.wthree_about_right {
+		padding:3em 2em 2em;
+	}
+	.wthree_about_right_grid {
+		padding:0 1em 0 0;
+	}
+	.w3_updates_bottom_grid {
+		width: 50%;
+	}
+	.w3_updates_bottom_grid:nth-child(2) {
+		margin-bottom:2em;
+	}
+	.count-down {
+		background-position:-540px 0px;
+	}
+	.span1_of_1 {
+		width: 31.5%;
+	}
+	.span1_of_1:nth-child(4) {
+		margin-left: 12.5em;
+	}
+}
+@media (max-width:480px){
+	.count-down {
+		padding: 2em 0;
+	}
+}
+@media (max-width: 414px){
+	
+	.count-down h3 {
+		font-size: 1em;
+	}
+}
+@media (max-width:320px){
+	.count-down h3 {
+		font-size: 14px;
+		padding-left: 3em;
+	}
+	.w3_updates_bottom_grid {
+		width: 65%;
+	}
+}

@@ -1,0 +1,69 @@
+{% load staticfiles %}
+
+<link href="{% static 'login/login-register.css' %}" rel="stylesheet" />
+
+<script src="{% static 'js/register/signup_login.js' %}"></script>
+		<div class="header">
+
+			<div class="w3ls-header">
+		<!-- header-one --> 
+
+				<div class="container">
+        <div class="w3ls-header-left">
+          <p><i class="fa fa-home" aria-hidden="true"></i> Free Home Delivery at Your Doorstep</p>
+        </div>
+
+					<div class="w3ls-header-right">
+          <div id="test">
+       <ul> 
+              <li class="head-dpdn">
+                <i class="fa fa-phone" aria-hidden="true"></i> Call us: +977-980-1074992 
+              </li> 
+              <li>
+      
+ {% if user.is_authenticated %}  
+                     
+ <li>
+    <a class="js-user-logout" href="#" data-url="{% url 'user-logout' %}"><i class="fa fa-sign-out" aria-hidden="true"></i> Logout</a>
+ </li>
+ <li>
+<a data-toggle="modal" href="#"> <i class="fa fa-user" aria-hidden="true"></i> {{ user.username|upper }}</a>
+</li>
+  {% else %}
+  <li>
+    <a class="js-user-signup" href="#" data-url="{% url 'user-signup' %}"><i class="fa fa-user-plus" aria-hidden="true"></i>Signup</a>
+    </li>
+    <li>
+    <a class="js-user-login " href="#" data-url="{% url 'login' %}"><i class="fa fa-sign-in" aria-hidden="true"></i>Login</a>
+    </li>
+
+{% endif %}
+              <li class="head-dpdn">
+                <a href="#"><i class="fa fa-gift" aria-hidden="true"></i> Offers</a>
+              </li> 
+              <!-- <li class="head-dpdn">
+                <a href="help.html"><i class="fa fa-question-circle" aria-hidden="true"></i> Help</a>
+              </li> -->
+            </ul>
+            </div>
+          </div>
+
+          
+    <!-- model start-->
+    <div class="modal fade login" id="modal-event">
+    <div class="modal-dialog login animated">
+      <div class="modal-content">
+
+
+      </div>
+    </div>
+  </div>
+
+
+  <!-- model end-->
+					{# {% include "home/banner/register_model.html" %} #}
+					<div class="clearfix"> </div> 
+				</div>
+			</div>
+
+		</div>
